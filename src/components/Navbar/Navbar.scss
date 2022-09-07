@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 41px;
+  margin-top: 2%;
+  margin-right: 8%;
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+  }
+}
