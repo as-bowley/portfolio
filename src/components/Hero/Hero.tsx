@@ -10,6 +10,10 @@ const Hero: React.FC = () => {
           Hi, I'm Alex,<br></br> a Web Developer
         </h1>
         <h3>I’m a Frontend Web Developer based in Germany.</h3>
+        <div className="hero_buttons">
+          <button>Projects</button>
+          <button>Resume</button>
+        </div>
       </div>
       <HeroPeep />
     </div>

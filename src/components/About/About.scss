@@ -1,0 +1,45 @@
+.about {
+  position: relative;
+  background: #ffffff;
+  border: 3px solid #000000;
+  box-shadow: 12px 14px 4px rgba(0, 0, 0, 0.25);
+  margin: 15%;
+  display: flex;
+  padding: 1.5rem;
+  .about_title {
+    position: absolute;
+    top: -50%;
+    font-family: "Montserrat", sans-serif;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 600;
+    }
+  }
+  .about_desc {
+    width: 50%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    line-height: 27px;
+  }
+  .about_skills {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    width: 60%;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    .about_skill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h5 {
+        margin-top: 15px;
+        font-weight: 400;
+      }
+      i {
+        font-size: 3rem;
+      }
+    }
+  }
+}

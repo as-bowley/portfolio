@@ -1,0 +1,30 @@
+.projects {
+  position: relative;
+  padding: 15%;
+  .projects_title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+  }
+  .projects_tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 4rem;
+    justify-items: flex-start;
+    width: 80%;
+    .projects_tile {
+      background: #ffffff;
+      border: 3px solid #000000;
+      box-shadow: 12px 14px 4px rgba(0, 0, 0, 0.25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      height: 400px;
+      perspective: 1000px;
+      img {
+        width: 400px;
+      }
+    }
+  }
+}
