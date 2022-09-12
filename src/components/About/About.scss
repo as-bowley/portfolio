@@ -12,33 +12,40 @@
     font-family: "Montserrat", sans-serif;
 
     h1 {
-      font-size: 4rem;
-      font-weight: 600;
+      font-size: 3.5rem;
+      font-weight: 400;
     }
   }
   .about_desc {
-    width: 50%;
+    width: 53ch;
     padding: 1rem;
     font-size: 1.1rem;
     line-height: 27px;
-  }
-  .about_skills {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    width: 60%;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
-    .about_skill {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h5 {
-        margin-top: 15px;
-        font-weight: 400;
-      }
-      i {
-        font-size: 3rem;
+  }
+  .about__skills__container {
+    width: 60%;
+    .about__skills__title {
+      font-family: "Montserrat", Arial, Helvetica, sans-serif;
+      margin-left: 8%;
+    }
+    .about__skills {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      font-family: "Montserrat", Arial, Helvetica, sans-serif;
+      .about_skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h5 {
+          margin-top: 15px;
+          font-weight: 400;
+        }
+        i {
+          font-size: 3rem;
+        }
       }
     }
   }

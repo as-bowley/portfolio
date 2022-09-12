@@ -3,9 +3,13 @@
   padding: 15%;
   .projects_title {
     font-family: "Montserrat", sans-serif;
-    font-size: 2rem;
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 400;
+    }
   }
   .projects_tiles {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr 1fr;
@@ -13,6 +17,7 @@
     justify-items: flex-start;
     width: 80%;
     .projects_tile {
+      position: relative;
       background: #ffffff;
       border: 3px solid #000000;
       box-shadow: 12px 14px 4px rgba(0, 0, 0, 0.25);
@@ -21,7 +26,7 @@
       align-items: center;
       width: 400px;
       height: 400px;
-      perspective: 1000px;
+      cursor: pointer;
       img {
         width: 400px;
       }

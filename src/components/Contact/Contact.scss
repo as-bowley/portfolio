@@ -7,13 +7,35 @@
     top: 5%;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     font-size: 2rem;
+    h1 {
+      font-weight: 400;
+      font-size: 3.5rem;
+    }
   }
   .contact_form {
     width: 50%;
+    .formSentOverlay {
+      background-color: #00000094;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      margin-right: 40px;
+    }
+    fieldset {
+      border: none;
+      :disabled {
+        background-color: #51515194;
+        border-color: #a4a4a4;
+      }
+    }
+
     form {
       display: flex;
       flex-direction: column;
-      width: 80%;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      z-index: 1;
       label {
         font-family: "Montserrat", Arial, Helvetica, sans-serif;
         font-weight: 400;
@@ -21,17 +43,36 @@
         line-height: 34px;
       }
       input {
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
         background: #ffffff;
         border: 3px solid #000000;
         box-shadow: 12px 14px 4px rgba(0, 0, 0, 0.25);
         height: 2rem;
         margin-bottom: 1rem;
+        font-size: 1.2rem;
+        padding: 5px 10px;
+        &:focus {
+          border: 3px solid #8390fa;
+        }
+        &:invalid {
+          border: 3px solid red;
+        }
       }
       textarea {
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
         background: #ffffff;
         border: 3px solid #000000;
         box-shadow: 12px 14px 4px rgba(0, 0, 0, 0.25);
         height: 200px;
+        font-size: 1.2rem;
+        padding: 5px 10px;
+        resize: none;
+        &:focus {
+          border: 3px solid #8390fa;
+        }
+        &:invalid {
+          border: 3px solid red;
+        }
       }
       button {
         background: #000000;
@@ -47,6 +88,15 @@
         padding: 15px 15px;
         cursor: pointer;
       }
+      .disabledButton {
+        visibility: collapse;
+        height: 0;
+        padding: 0;
+      }
+      span {
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+      }
     }
   }
   .contact_alternative {
@@ -56,5 +106,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
+    margin-left: 40px;
   }
 }

@@ -1,0 +1,61 @@
+.scrollNav__scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1%;
+  ul {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 90%;
+    li {
+      background-color: #fdffe0;
+      padding: 5px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      rotate: (90deg);
+    }
+  }
+  .scrollNav__hero {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 50%;
+    li {
+      background-color: #fdffe0;
+      padding: 5px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      rotate: initial;
+      i {
+        font-size: 3rem;
+      }
+      svg {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  .currentlyAt {
+    font-size: 2.5rem;
+    rotate: (0deg);
+    transition: font 0.3s ease;
+    transition: rotate 0.3s ease;
+  }
+}
