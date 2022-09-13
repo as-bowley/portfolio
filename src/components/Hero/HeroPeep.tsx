@@ -5,7 +5,7 @@ import "./HeroPeep.scss";
 const HeroPeep: React.FC = () => {
   useEffect(() => {
     const eyes = document.querySelectorAll<HTMLElement>(".hero__peep__eye");
-    const peepBg = document.querySelector<HTMLElement>(".hero__peep__bg");
+    const peepBg = document.querySelector<HTMLElement>(".hero__peep__bg")!;
     window.addEventListener("mousemove", (e) => {
       eyes.forEach((eye) => {
         let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
@@ -16,7 +16,9 @@ const HeroPeep: React.FC = () => {
         const radian = Math.atan2(e.pageX - x, e.pageY - y);
         const rot = radian * (180 / Math.PI) * -1 + -90;
         eye.style.transform = `rotate(${rot}deg)`;
-        // peepBg!.style.translate = `${rot}px, ${rot}px`;
+        const valX = (e.pageX * -1) / 100;
+        const valY = (e.pageY * -1) / 100;
+        peepBg.style.transform = `translate(-5%) translate3d(${valX}px, ${valY}px, 0)`;
       });
     });
   }, []);

@@ -3,6 +3,9 @@ import "./ScrollNav.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { useScroll } from "framer-motion";
+import { Link } from "react-scroll";
+import AnimatedText from "./AnimatedText";
+import { motion } from "framer-motion";
 
 const ScrollNav: React.FC = () => {
   const [scrollVal, setScrollVal] = useState<number>(0);
@@ -17,7 +20,11 @@ const ScrollNav: React.FC = () => {
   return (
     <div className="scrollNav__scrolled">
       {scrollVal < 0.2 ? (
-        <div className="scrollNav__hero">
+        <motion.div
+          className="scrollNav__hero"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           <ul>
             <li>
               <a
@@ -46,25 +53,53 @@ const ScrollNav: React.FC = () => {
               <FontAwesomeIcon icon={faEnvelope} />
             </li>
           </ul>
-        </div>
+        </motion.div>
       ) : (
         <ul>
           <li>Home</li>
           <li
             className={scrollVal > 0.2 && scrollVal < 0.45 ? "currentlyAt" : ""}
           >
-            About
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-450}
+              duration={500}
+            >
+              About
+            </Link>
           </li>
           <li
             className={
               scrollVal > 0.45 && scrollVal < 0.78 ? "currentlyAt" : ""
             }
           >
-            Projects
+            <Link
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={250}
+              duration={500}
+              style={{ cursor: "pointer" }}
+            >
+              Projects
+            </Link>
           </li>
-          <li className={scrollVal > 0.78 ? "currentlyAt" : ""}>Contact</li>
+          <li className={scrollVal > 0.78 ? "currentlyAt" : ""}>
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
       )}
+      {scrollVal < 0.2 ? <AnimatedText word="SCROLL" /> : null}
     </div>
   );
 };
