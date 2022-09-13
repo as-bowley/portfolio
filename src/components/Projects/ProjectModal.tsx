@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProjectModal.scss";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
   title: string;
@@ -24,8 +25,28 @@ const ProjectModal: React.FC<Props> = ({
 }) => {
   if (!isModalOpen) return null;
   return (
-    <div className="modal__overlay">
-      <div className="modal__container" onClick={(e) => e.stopPropagation()}>
+    <motion.div
+      className="modal__overlay"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.3, ease: "easeInOut" } }}
+    >
+      <motion.div
+        className="modal__container"
+        onClick={(e) => e.stopPropagation()}
+        initial={{ x: -150, rotateY: 270, scale: 0.8 }}
+        animate={{
+          x: 0,
+          rotateY: 360,
+          scale: 1,
+          transition: { ease: "easeInOut", duration: 0.3 },
+        }}
+        exit={{
+          rotateY: 270,
+          scale: 0.8,
+          x: -150,
+          transition: { ease: "easeInOut", duration: 0.3 },
+        }}
+      >
         <div className="modal__project__content">
           <h2>{title}</h2>
           <img src={previewImg} alt="" className="modal__project__img" />
@@ -59,8 +80,8 @@ const ProjectModal: React.FC<Props> = ({
             ) : null}
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
