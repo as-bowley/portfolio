@@ -36,17 +36,19 @@ const About: React.FC = () => {
       </div>
       <div className="about_desc">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar vel
-          arcu phasellus pellentesque mi, enim. Sed aenean neque leo, odio
-          accumsan, senectus. Id ut porttitor eu mattis. Integer imperdiet in
-          tortor dui eleifend donec gravida molestie. Orci, elit sollicitudin
-          morbi purus justo, diam interdum augue ornare. Ipsum nec id mattis
-          elementum. Vitae a volutpat praesent egestas elementum. Amet arcu
-          felis ac sit vulputate. Aliquam ornare ullamcorper sed lacus libero,
-          nunc varius habitant semper. Nibh nisl, gravida sollicitudin ornare
-          pellentesque ultrices amet. Donec feugiat nisi aenean facilisi. Orci,
-          morbi nisl viverra tincidunt nunc nibh morbi. Turpis metus id fames
-          rhoncus neque morbi sit blandit nisi.
+          Hi, I’m Alex and I’m passionate about everything web-development!
+          <br></br>
+          <br></br>
+          My web development journey started whilst I was working as a plumber
+          in the UK. I wanted to create a website for other plumbers to discover
+          new tool innovations. I began with Wordpress and eventually landed
+          upon The Odin Project, where I was able to really discover my passion
+          for web development and all the technologies that come along with it.
+          <br></br>
+          <br></br>
+          I’m always learning new technologies and believe that my passion and
+          enthusiasm for web development would make me a perfect fit for a
+          junior web development position!
         </p>
       </div>
       <div className="about__skills__container">
@@ -74,7 +76,7 @@ const About: React.FC = () => {
           </div>
           <div className="about_skill">
             <i className="devicon-nodejs-plain colored"></i>
-            <h5>NodeJS</h5>
+            <h5>Node.js</h5>
           </div>
           <div className="about_skill">
             <i className="devicon-sass-plain colored"></i>

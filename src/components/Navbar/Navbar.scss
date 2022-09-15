@@ -6,11 +6,10 @@
   font-weight: 400;
   font-size: 2rem;
   line-height: 41px;
-  margin-top: 2%;
-  margin: 2% 8% 0 6%;
+  margin: 2% 8% 0 200px;
+  width: -webkit-fill-available;
   .nav__title {
     z-index: 2;
-    padding: 20px;
     height: fit-content;
     h1 {
       margin: 0;

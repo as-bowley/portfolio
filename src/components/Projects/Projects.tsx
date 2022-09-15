@@ -3,6 +3,8 @@ import footbaselogo from "../../img/footbaseproject.png";
 import wheresvaderlogo from "../../img/wheresvaderproject.png";
 import battleshiplogo from "../../img/battleshipproject.png";
 import todolistlogo from "../../img/todolistproject.png";
+import cvlogo from "../../img/cvbuilderlogo.png";
+import memorylogo from "../../img/memorygamelogo.png";
 import ProjectModal from "./ProjectModal";
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -18,6 +20,8 @@ const Projects: React.FC = () => {
   const [isVaderModalOpen, setIsVaderModalOpen] = useState<boolean>(false);
   const [isBattleshipModalOpen, setIsBattleshipModalOpen] =
     useState<boolean>(false);
+  const [isMemoryCardOpen, setIsMemoryCardOpen] = useState<boolean>(false);
+  const [isCVOpen, setIsCVOpen] = useState<boolean>(false);
   const [isTodoModalOpen, setIsTodoModalOpen] = useState<boolean>(false);
   const { ref, inView } = useInView({ threshold: 0.2 });
   const animation = useAnimation();
@@ -119,24 +123,24 @@ const Projects: React.FC = () => {
         <div
           ref={ref}
           className="projects_tile"
-          onClick={() => setIsTodoModalOpen(!isTodoModalOpen)}
+          onClick={() => setIsCVOpen(!isCVOpen)}
         >
           <ProjectModal
-            title="Todo List"
-            previewImg={todoGif}
-            tech={["javascript"]}
-            desc=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta
+            title="Cv Builder"
+            previewImg={cvlogo}
+            tech={["react", "javascript"]}
+            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta
             massa eu sollicitudin ipsum. Turpis risus imperdiet ultricies
             feugiat etiam eu consectetur risus. Dui in egestas ligula lorem.
             Facilisis vel volutpat erat faucibus iaculis est ut. Aliquam
             pharetra consectetur feugiat non. Morbi neque ac faucibus bibendum
             egestas. Lacus iaculis nec."
-            isModalOpen={isTodoModalOpen}
-            link="https://as-bowley.github.io/todo-list/"
-            code="https://github.com/as-bowley/todo-list"
-            design="https://www.figma.com/file/9nf7RxasK2AJpTBaP0zdJ0/Todo-list"
+            isModalOpen={isCVOpen}
+            link=""
+            code="https://github.com/as-bowley/cv-project"
+            design="https://www.figma.com/file/yoVel5zlpUSO8UIkOjbVPO/CV-App"
           />
-          <img src={todolistlogo} alt="" />
+          <img src={cvlogo} alt="" />
         </div>
       </div>
     </div>

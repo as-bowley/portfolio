@@ -1,7 +1,12 @@
+.App {
+  display: flex;
+  align-items: center;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
-  left: 117px;
+  left: 99px;
   right: 0;
   height: 100%;
   width: 2px;

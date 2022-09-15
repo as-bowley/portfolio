@@ -3,6 +3,7 @@ import "./Hero.scss";
 import HeroPeep from "./HeroPeep";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-scroll";
 
 const Hero: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
@@ -29,16 +30,25 @@ const Hero: React.FC = () => {
       });
     }
   }, [inView, animation]);
+
   return (
     <div className="hero" id="hero">
       <div className="hero__desc">
-        <h1>
-          Hi, I'm Alex,<br></br> a Web Developer
-        </h1>
-        <h3>I’m a Frontend Web Developer based in Germany.</h3>
+        <h1>Hi, I'm Alex.</h1>
+        <h3>
+          I’m a <strong>Frontend Web Developer</strong> based in Germany.
+        </h3>
         <div className="hero_buttons">
           <motion.button ref={ref} animate={animation}>
-            Projects
+            <Link
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={250}
+              duration={500}
+            >
+              Projects
+            </Link>
           </motion.button>
           <motion.button ref={ref} animate={animation}>
             Resume
