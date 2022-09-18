@@ -48,7 +48,7 @@ const ProjectModal: React.FC<Props> = ({
         }}
       >
         <div className="modal__project__content">
-          <h2>{title}</h2>
+          <h2 className="modal__project__title">{title}</h2>
           <img src={previewImg} alt="" className="modal__project__img" />
           <div className="modal__project__tech">
             {tech.map((item, i) => (

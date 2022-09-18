@@ -4,26 +4,114 @@
   align-items: center;
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 41px;
-  margin: 2% 8% 0 200px;
-  width: -webkit-fill-available;
+  width: 100%;
+  margin-top: 20px;
   .nav__title {
+    margin-left: 105px;
     z-index: 2;
     height: fit-content;
     h1 {
       margin: 0;
       font-weight: 400;
       font-family: "Source Serif Pro", serif;
-      font-size: 3rem;
+      font-size: 2rem;
     }
   }
   ul {
+    margin-right: 105px;
     display: flex;
     list-style: none;
     gap: 3rem;
     a {
       cursor: pointer;
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav {
+    .mobile-nav {
+      .mobile-nav__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 300px;
+        z-index: 100;
+        .mobile-nav__menu {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #000;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          ul {
+            display: initial;
+            color: #fdffe0;
+            margin-right: 0;
+            li {
+              padding-left: 40px;
+              padding-bottom: 20px;
+              cursor: pointer;
+            }
+          }
+          .mobile-nav__menu-socials {
+            ul {
+              display: flex;
+              align-items: center;
+              padding-left: 0;
+              gap: 0.2rem;
+              li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  i {
+                    font-size: 3rem;
+                    color: #fdffe0;
+                  }
+                }
+                svg {
+                  font-size: 3rem;
+                  color: #fdffe0;
+                }
+              }
+            }
+          }
+        }
+      }
+      display: unset;
+      margin-right: 5%;
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        svg {
+          font-size: 1.8rem;
+        }
+      }
+      .mobile-nav__toggle {
+        z-index: 101;
+        color: #000;
+      }
+    }
+    .nav__title {
+      margin-left: 5%;
+    }
+    ul {
+      display: none;
     }
   }
 }

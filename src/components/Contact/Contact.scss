@@ -1,14 +1,12 @@
 .contact {
-  // padding: 15%;
   position: relative;
   display: flex;
-  margin-left: 200px;
+  margin-left: 80px;
   width: 70%;
   align-self: center;
-  margin-bottom: 200px;
   .contact_title {
     position: absolute;
-    top: -30%;
+    top: -25%;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     font-size: 2rem;
     h1 {
@@ -27,19 +25,17 @@
     }
     fieldset {
       border: none;
+      padding: 0;
       :disabled {
         background-color: #51515194;
         border-color: #a4a4a4;
       }
     }
-
     form {
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 10px;
       box-sizing: border-box;
-      z-index: 1;
       label {
         font-family: "Montserrat", Arial, Helvetica, sans-serif;
         font-weight: 400;
@@ -108,11 +104,26 @@
   }
   .contact_alternative {
     width: 40%;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: "Source Serif Pro";
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
-    margin-left: 40px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact {
+    margin-left: 0;
+    flex-direction: column;
+    .contact_form {
+      width: 80%;
+    }
+    .contact_alternative {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+    }
   }
 }

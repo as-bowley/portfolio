@@ -1,16 +1,18 @@
 .hero {
   display: flex;
-  padding: 10%;
+  align-items: center;
+  width: 99%;
+  padding: 6% 0 6% 4%;
   margin-bottom: 25%;
-  margin-left: 200px;
-  width: -webkit-fill-available;
+  box-sizing: border-box;
+  overflow: hidden;
   .hero__desc {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 200px;
     width: 50%;
     font-family: "Source Serif Pro", serif;
-    min-width: fit-content;
     h1 {
       font-weight: 400;
       font-size: 4rem;
@@ -49,12 +51,63 @@
     width: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 }
 
-// @media (max-width: 1600px) {
-//   .hero {
-//     flex-direction: column-reverse;
-//     align-items: center;
-//   }
-// }
+@media (min-width: 2400px) {
+  .hero {
+    justify-content: center;
+    .hero__desc {
+      width: 30%;
+    }
+    .hero__peep {
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .hero {
+    flex-direction: column-reverse;
+    align-items: center;
+    .hero__desc {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    padding: 10% 7%;
+    margin-bottom: 300px;
+    .hero__desc {
+      margin-left: 0;
+      width: 100%;
+      h1 {
+        font-size: 2.5rem;
+      }
+      h3 {
+        width: auto;
+      }
+      .hero_buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        button {
+          width: 40%;
+          padding: 2% 4%;
+          display: inline-block;
+          a {
+            width: auto;
+          }
+        }
+      }
+    }
+
+    .hero__peep {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}

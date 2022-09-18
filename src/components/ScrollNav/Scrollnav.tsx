@@ -56,7 +56,17 @@ const ScrollNav: React.FC = () => {
         </motion.div>
       ) : (
         <ul>
-          <li>Home</li>
+          <li>
+            <Link
+              to="hero"
+              spy={true}
+              smooth={true}
+              offset={-180}
+              duration={500}
+            >
+              Home
+            </Link>
+          </li>
           <li
             className={scrollVal > 0.2 && scrollVal < 0.45 ? "currentlyAt" : ""}
           >
@@ -64,7 +74,7 @@ const ScrollNav: React.FC = () => {
               to="about"
               spy={true}
               smooth={true}
-              offset={-450}
+              offset={-180}
               duration={500}
             >
               About
@@ -79,7 +89,7 @@ const ScrollNav: React.FC = () => {
               to="projects"
               spy={true}
               smooth={true}
-              offset={250}
+              offset={40}
               duration={500}
               style={{ cursor: "pointer" }}
             >

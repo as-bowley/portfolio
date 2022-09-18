@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+import MobileNav from "./MobileNav";
 import "./Navbar.scss";
 
 const Navbar: React.FC = () => {
@@ -19,7 +20,7 @@ const Navbar: React.FC = () => {
             to="about"
             spy={true}
             smooth={true}
-            offset={-450}
+            offset={-180}
             duration={500}
           >
             About
@@ -30,7 +31,7 @@ const Navbar: React.FC = () => {
             to="projects"
             spy={true}
             smooth={true}
-            offset={250}
+            offset={40}
             duration={500}
           >
             Projects
@@ -49,6 +50,7 @@ const Navbar: React.FC = () => {
           </Link>
         </li>
       </ul>
+      <MobileNav />
     </div>
   );
 };
