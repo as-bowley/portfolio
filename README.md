@@ -1,6 +1,6 @@
 # Portfolio
 
-![](https://imgur.com/ZZ7kqKN)
+![](https://imgur.com/ZZ7kqKN.gif)
 
 ## Description
 
@@ -14,7 +14,7 @@ A couple of improvements that I would like to make are;
 ## How to install
 
 ```
-git clone https://github.com/LeoKirasic/portfolio.git
+git clone https://github.com/as-bowley/portfolio.git
 cd portfolio
 npm install
 npm run build
