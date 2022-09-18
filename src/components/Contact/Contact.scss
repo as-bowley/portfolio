@@ -4,6 +4,7 @@
   margin-left: 80px;
   width: 70%;
   align-self: center;
+  margin-bottom: 100px;
   .contact_title {
     position: absolute;
     top: -25%;
@@ -117,6 +118,7 @@
   .contact {
     margin-left: 0;
     flex-direction: column;
+    margin-bottom: 0px;
     .contact_form {
       width: 80%;
     }

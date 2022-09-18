@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   width: 99%;
+  height: 100vh;
   padding: 6% 0 6% 4%;
-  margin-bottom: 25%;
+  margin-bottom: 500px;
   box-sizing: border-box;
   overflow: hidden;
+  margin-top: 5%;
   .hero__desc {
     display: flex;
     flex-direction: column;
@@ -67,6 +69,19 @@
   }
 }
 
+@media (min-width: 1600px) {
+  .hero {
+    justify-content: center;
+    margin-top: 0;
+    .hero__desc {
+      width: 40%;
+    }
+    .hero__peep {
+      width: 40%;
+    }
+  }
+}
+
 @media (max-width: 1300px) {
   .hero {
     flex-direction: column-reverse;
@@ -80,7 +95,8 @@
 @media (max-width: 1000px) {
   .hero {
     padding: 10% 7%;
-    margin-bottom: 300px;
+    margin-bottom: 200px;
+    width: 90%;
     .hero__desc {
       margin-left: 0;
       width: 100%;

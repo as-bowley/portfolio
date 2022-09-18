@@ -2,7 +2,7 @@
   position: relative;
   align-self: center;
   margin-left: 80px;
-  margin-bottom: 400px;
+  margin-bottom: 500px;
   width: 70%;
   .projects_title {
     font-family: "Montserrat", sans-serif;
@@ -40,6 +40,7 @@
 @media (max-width: 1000px) {
   .projects {
     margin-left: 0;
+    margin-bottom: 300px;
   }
 }
 
