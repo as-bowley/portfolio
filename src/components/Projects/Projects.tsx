@@ -2,51 +2,22 @@ import "./Projects.scss";
 import footbaselogo from "../../img/footbaseproject.png";
 import wheresvaderlogo from "../../img/wheresvaderproject.png";
 import battleshiplogo from "../../img/battleshipproject.png";
-import todolistlogo from "../../img/todolistproject.png";
 import cvlogo from "../../img/cvbuilderlogo.png";
-import memorylogo from "../../img/memorygamelogo.png";
 import ProjectModal from "./ProjectModal";
-import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import footbaseGif from "../../img/footbaseprojectgif.gif";
 import vaderGif from "../../img/vaderprojectgif.gif";
 import battleshipGif from "../../img/battleshipgif.gif";
-import todoGif from "../../img/todogif.gif";
 
 const Projects: React.FC = () => {
   const [isFootModalOpen, setIsFootModalOpen] = useState<boolean>(false);
   const [isVaderModalOpen, setIsVaderModalOpen] = useState<boolean>(false);
   const [isBattleshipModalOpen, setIsBattleshipModalOpen] =
     useState<boolean>(false);
-  const [isMemoryCardOpen, setIsMemoryCardOpen] = useState<boolean>(false);
   const [isCVOpen, setIsCVOpen] = useState<boolean>(false);
-  const [isTodoModalOpen, setIsTodoModalOpen] = useState<boolean>(false);
-  const { ref, inView } = useInView({ threshold: 0.2 });
-  const animation = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        x: "0",
-        y: "0",
-        boxShadow: "8px 10px 4px rgba(0, 0, 0, 0.25)",
-        transition: {
-          delay: 0.3,
-          type: "spring",
-          duration: 0.8,
-        },
-      });
-    }
-    if (!inView) {
-      animation.start({
-        x: "8px",
-        y: "10px",
-        boxShadow: "rgba(0, 0, 0, 0.25) 0px 0px 0px 0px",
-      });
-    }
-  }, [inView, animation]);
+  const { ref } = useInView({ threshold: 0.2 });
 
   return (
     <div className="projects" id="projects">
@@ -73,6 +44,7 @@ const Projects: React.FC = () => {
             link="https://foot-base.herokuapp.com/"
             code="https://github.com/as-bowley/footbase"
             design="https://www.figma.com/file/KfzwxjTpN2G0znH052UfkO/Footbase"
+            closeModal={setIsFootModalOpen}
           />
           <img src={footbaselogo} alt="" />
         </div>
@@ -95,6 +67,7 @@ const Projects: React.FC = () => {
             link="https://as-bowley.github.io/wheres-waldo/"
             code="https://github.com/as-bowley/wheres-waldo"
             design=""
+            closeModal={setIsVaderModalOpen}
           />
           <img src={wheresvaderlogo} alt="" />
         </div>
@@ -117,6 +90,7 @@ const Projects: React.FC = () => {
             link=""
             code="https://github.com/as-bowley/battleship"
             design="https://www.figma.com/file/xmwZaIcVFdxbTus2cCIxDJ/Battleship"
+            closeModal={setIsBattleshipModalOpen}
           />
           <img src={battleshiplogo} alt="" />
         </div>
@@ -139,6 +113,7 @@ const Projects: React.FC = () => {
             link=""
             code="https://github.com/as-bowley/cv-project"
             design="https://www.figma.com/file/yoVel5zlpUSO8UIkOjbVPO/CV-App"
+            closeModal={setIsCVOpen}
           />
           <img src={cvlogo} alt="" />
         </div>

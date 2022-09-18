@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
               to="projects"
               spy={true}
               smooth={true}
-              offset={250}
+              offset={0}
               duration={500}
             >
               Projects

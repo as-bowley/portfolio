@@ -6,8 +6,11 @@
   left: 0;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.473);
+  transform: translateZ(1000px);
+  perspective: 1000px;
   .modal__container {
     position: relative;
+    z-index: 2;
     top: 10%;
     left: 10%;
     height: 80%;
@@ -16,6 +19,7 @@
     border: 3px solid #000;
     cursor: auto;
     .modal__project__content {
+      z-index: 3000;
       height: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -26,6 +30,13 @@
       align-items: center;
       padding: 30px 50px;
       box-sizing: border-box;
+      .modal__project__content--close {
+        position: absolute;
+        top: 3%;
+        right: 3%;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
       .modal__project__title {
         grid-area: title;
       }
@@ -101,8 +112,8 @@
   .modal__overlay {
     .modal__container {
       width: 80%;
-      height: 90%;
-      top: 5%;
+      height: 80%;
+      top: 3%;
       .modal__project__content {
         display: flex;
         flex-direction: column;
@@ -110,6 +121,13 @@
         justify-content: space-around;
         gap: 20px;
         padding: 5%;
+        h2 {
+          font-size: 2rem;
+        }
+        .modal__project__content--close {
+          top: 4%;
+          right: 5%;
+        }
         .modal__project__desc {
           padding-right: 0;
           p {
@@ -122,6 +140,8 @@
         .modal__project__tech {
           margin: 0;
           span {
+            margin: 0;
+            margin-right: 3px;
             font-size: 1rem;
             i {
               font-size: 1.2rem;
@@ -131,12 +151,11 @@
         .modal__project__buttons {
           width: 100%;
           display: flex;
-          justify-content: space-around;
-
+          justify-content: flex-start;
           a {
             width: 30%;
+            margin-right: 10px;
             button {
-              margin-right: 10px;
               font-size: 0.9rem;
               padding: 4% 8%;
               height: 50px;

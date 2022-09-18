@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](https://imgur.com/ZZ7kqKN)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+The website is built with the React framework and using Typescript and SCSS for the code and styling respectively. The project itself wasn't too challenging and didn't present any big challenges to overcome, but was more focused on gaining familiarity with using Typescript, as this was the first project I've built with Typescript.
 
-### `npm start`
+A couple of improvements that I would like to make are;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- More dynamic animations on the avatar on the hero section. I've animated the eyes but would like to have been able to animate the head as well. I will look in to using SVG's for that in the future.
+- I'd like to try the site using react-router and framer motion to try and re-create the transitions seen on [Rob Owen's](https://robbowen.digital/) personal site
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to install
 
-### `npm test`
+```
+git clone https://github.com/LeoKirasic/portfolio.git
+cd portfolio
+npm install
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
 
-### `npm run build`
+- [React](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Create React App](https://create-react-app.dev/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Awesome Font](https://fontawesome.com/)
+- [EmailJS](https://www.emailjs.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Attributes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The icons used are from either [Awesome Font](https://fontawesome.com/) or [DevICON](https://devicon.dev/).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The design was done by myself in Figma, taking inspiration from [Rob Owen's](https://robbowen.digital/) site.

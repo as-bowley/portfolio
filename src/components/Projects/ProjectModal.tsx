@@ -1,6 +1,8 @@
 import React from "react";
 import "./ProjectModal.scss";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   title: string;
@@ -11,6 +13,7 @@ interface Props {
   link: string;
   code: string;
   design: string;
+  closeModal: React.Dispatch<React.SetStateAction<any>>;
 }
 
 const ProjectModal: React.FC<Props> = ({
@@ -22,6 +25,7 @@ const ProjectModal: React.FC<Props> = ({
   link,
   code,
   design,
+  closeModal,
 }) => {
   if (!isModalOpen) return null;
   return (
@@ -48,6 +52,14 @@ const ProjectModal: React.FC<Props> = ({
         }}
       >
         <div className="modal__project__content">
+          <div
+            className="modal__project__content--close"
+            onClick={() => closeModal(false)}
+          >
+            <span>
+              <FontAwesomeIcon icon={faXmark} />
+            </span>
+          </div>
           <h2 className="modal__project__title">{title}</h2>
           <img src={previewImg} alt="" className="modal__project__img" />
           <div className="modal__project__tech">
