@@ -1,6 +1,6 @@
 # Portfolio
 
-![](https://imgur.com/ZZ7kqKN)
+![](https://imgur.com/ZZ7kqKN.gif)
 
 ## Description
 
@@ -8,8 +8,8 @@ The website is built with the React framework and using Typescript and SCSS for 
 
 A couple of improvements that I would like to make are;
 
-- More dynamic animations on the avatar on the hero section. I've animated the eyes but would like to have been able to animate the head as well. I will look in to using SVG's for that in the future.
-- I'd like to try the site using react-router and framer motion to try and re-create the transitions seen on [Rob Owen's](https://robbowen.digital/) personal site
+- More dynamic animations on the avatar in the hero section. I've animated the eyes but would like to have been able to animate the head as well. I will look into using SVG's for that in the future.
+- I'd like to try the site using react-router and framer motion to try and re-create the transitions seen on [Rob Owen's](https://robbowen.digital/) personal site.
 
 ## How to install
 
@@ -31,6 +31,6 @@ npm run build
 
 ## Attributes
 
-The icons used are from either [Awesome Font](https://fontawesome.com/) or [DevICON](https://devicon.dev/).
+The icons used are from either [Awesome Font](https://fontawesome.com/) or [DEVICON](https://devicon.dev/).
 
 The design was done by myself in Figma, taking inspiration from [Rob Owen's](https://robbowen.digital/) site.
