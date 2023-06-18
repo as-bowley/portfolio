@@ -1,17 +1,8 @@
 .about {
-  position: relative;
-  background: #ffffff;
-  border: 3px solid #000000;
-  box-shadow: 12px 14px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  padding: 1.5rem;
-  margin-left: 80px;
-  margin-bottom: 500px;
-  width: 70%;
-  box-sizing: border-box;
+  margin-top: 5rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
   .about_title {
-    position: absolute;
-    top: -140px;
     font-family: "Montserrat", sans-serif;
 
     h1 {
@@ -19,84 +10,43 @@
       font-weight: 400;
     }
   }
-  .about_desc {
-    width: 55ch;
-    padding: 1rem;
-    font-size: 1.1rem;
-    line-height: 27px;
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  }
-  .about__skills__container {
-    width: 60%;
-    align-self: baseline;
-    .about__skills__title {
-      font-family: "Montserrat", Arial, Helvetica, sans-serif;
-      margin-left: 8%;
-    }
-    .about__skills {
-      padding: 16px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      grid-template-rows: auto;
-      font-family: "Montserrat", Arial, Helvetica, sans-serif;
-      .about_skill {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        h5 {
-          margin-top: 15px;
-          font-weight: 400;
-        }
-        i {
-          font-size: 3rem;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 1350px) {
-  .about {
-    flex-direction: column;
-    justify-content: center;
+  .about__container {
+    background: #ffffff;
+    border: 3px solid #000000;
+    box-shadow: 12px 14px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    padding: 1.5rem;
+    box-sizing: border-box;
     .about_desc {
-      max-width: 55ch;
-    }
-    .about__skills__container {
-      width: 100%;
+      width: 55ch;
       padding: 1rem;
-      box-sizing: border-box;
-      .about__skills {
-        grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
-      }
-      .about__skills__title {
-        margin-left: 0;
-      }
-    }
-  }
-}
-
-@media (max-width: 1000px) {
-  .about {
-    margin-left: 0;
-    width: 80%;
-    margin-bottom: 200px;
-
-    .about_desc {
-      width: auto;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      line-height: 27px;
+      font-family: "Montserrat", Arial, Helvetica, sans-serif;
     }
     .about__skills__container {
-      display: flex;
-      flex-direction: column;
+      width: 60%;
+      align-self: baseline;
+      .about__skills__title {
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        margin-left: 8%;
+      }
       .about__skills {
-        padding: 0;
+        padding: 16px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-rows: auto;
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
         .about_skill {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           h5 {
-            font-size: 0.7rem;
+            margin-top: 15px;
+            font-weight: 400;
           }
           i {
-            font-size: 2rem;
+            font-size: 3rem;
           }
         }
       }

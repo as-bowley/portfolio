@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import "./styles/App.scss";
+import React from "react";
 import Layout from "./Layout";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";

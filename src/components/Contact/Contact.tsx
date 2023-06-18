@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
 import "./Contact.scss";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const Contact: React.FC = () => {
@@ -34,38 +34,39 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="contact" id="about">
-      <div className="contact_title">
+    <div className="contact">
+      <div className="contact__title">
         <h1>Contact</h1>
       </div>
-      <div className="contact_form">
-        <fieldset disabled={formSent ? true : false}>
-          <form ref={form} onSubmit={sendEmail}>
-            <label htmlFor="name">Name</label>
-            <input type={"text"} id="name" name="name" minLength={2} />
-            <label htmlFor="email">Email</label>
-            <input type={"email"} id="email" name="email" />
-            <label>Message</label>
-            <textarea name="message" minLength={2} />
-            <button className={`${formSent ? `disabledButton` : ""}`}>
-              Send
-            </button>
-            {formSent ? (
-              <span>
-                Message sent! <br></br>
-                <br></br>Thanks for contacting me! I'll respond ASAP!
-              </span>
-            ) : null}
-          </form>
-        </fieldset>
-      </div>
-      <div className="contact_alternative">
-        <p>
-          You can also contact me through the following email address:
-          <br></br>
-          <br></br>
-          <strong>alexstubowley@gmail.com</strong>
-        </p>
+      <div className="contact__container" id="about">
+        <div className="contact_form">
+          <fieldset disabled={formSent ? true : false}>
+            <form ref={form} onSubmit={sendEmail}>
+              <label htmlFor="name">Name</label>
+              <input type={"text"} id="name" name="name" minLength={2} />
+              <label htmlFor="email">Email</label>
+              <input type={"email"} id="email" name="email" />
+              <label>Message</label>
+              <textarea name="message" minLength={2} />
+              <button className={`${formSent ? `disabledButton` : ""}`}>
+                Send
+              </button>
+              {formSent ? (
+                <span>
+                  Message sent! <br></br>
+                  <br></br>Thanks for contacting me! I'll respond ASAP!
+                </span>
+              ) : null}
+            </form>
+          </fieldset>
+        </div>
+        <div className="contact_alternative">
+          <p>
+            You can also contact me through the following email address:
+            <br></br>
+            <strong>alexstubowley@gmail.com</strong>
+          </p>
+        </div>
       </div>
     </div>
   );
