@@ -8,7 +8,7 @@ interface Props {
   title: string;
   previewImg: string;
   tech: string[];
-  desc: string;
+  desc: any;
   isModalOpen: boolean;
   link: string;
   code: string;
@@ -70,9 +70,7 @@ const ProjectModal: React.FC<Props> = ({
               </span>
             ))}
           </div>
-          <div className="modal__project__desc">
-            <p>{desc}</p>
-          </div>
+          <div className="modal__project__desc">{desc}</div>
 
           <div className="modal__project__buttons">
             {link !== "" ? (

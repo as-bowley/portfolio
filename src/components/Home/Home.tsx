@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-scroll";
 
-const Hero: React.FC = () => {
+const Home: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
   const animation = useAnimation();
 
@@ -51,7 +51,14 @@ const Hero: React.FC = () => {
             </Link>
           </motion.button>
           <motion.button ref={ref} animate={animation}>
-            Resume
+            <a
+              href={require("../../documents/a-bowley-resume.pdf")}
+              target="_blank"
+              rel="noreferrer"
+              style={{ textDecoration: "none", color: "#000" }}
+            >
+              Resume
+            </a>
           </motion.button>
         </div>
       </div>
@@ -60,4 +67,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default Home;

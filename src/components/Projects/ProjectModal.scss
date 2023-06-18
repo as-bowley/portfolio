@@ -23,10 +23,11 @@
       height: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr 5fr 1fr;
       grid-template-areas:
-        "title tech"
+        "title img"
         "desc img"
-        "buttons img";
+        "buttons tech";
       align-items: center;
       padding: 30px 50px;
       box-sizing: border-box;
@@ -51,22 +52,32 @@
         margin-left: 15px;
         margin-top: 30px;
         width: 100%;
-        align-self: baseline;
+        align-self: center;
+        border: 1px solid #000;
         img {
           max-width: 100%;
         }
       }
       .modal__project__desc {
         grid-area: desc;
+        margin-top: 10px;
+        padding-right: 10px;
         min-width: 50%;
         padding-right: 50px;
         font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        align-self: flex-start;
+        line-height: 1.4;
+        overflow-y: scroll;
+        word-wrap: normal;
+        p {
+          padding-right: 10px;
+        }
       }
       .modal__project__tech {
         grid-area: tech;
-        height: 20px;
-        margin-top: 20px;
         width: 100%;
+        margin-left: 15px;
+        align-self: flex-end;
         span {
           display: inline-flex;
           align-items: center;
@@ -88,6 +99,7 @@
       .modal__project__buttons {
         grid-area: buttons;
         min-width: fit-content;
+        align-self: flex-end;
         a {
           button {
             font-weight: 700;
@@ -108,12 +120,12 @@
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
   .modal__overlay {
     .modal__container {
       width: 80%;
-      height: 80%;
-      top: 3%;
+      height: 84%;
+      top: 2%;
       .modal__project__content {
         display: flex;
         flex-direction: column;
@@ -135,7 +147,11 @@
           }
         }
         .modal__project__img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           margin: 0;
+          max-height: 50%;
         }
         .modal__project__tech {
           margin: 0;
@@ -151,7 +167,7 @@
         .modal__project__buttons {
           width: 100%;
           display: flex;
-          justify-content: flex-start;
+          justify-content: center;
           a {
             width: 30%;
             margin-right: 10px;

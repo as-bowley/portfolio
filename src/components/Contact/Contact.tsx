@@ -7,8 +7,6 @@ const Contact: React.FC = () => {
 
   const form = useRef<HTMLFormElement>(null);
 
-  const formValidationCheck = () => {};
-
   const sendEmail = (e: any) => {
     e.preventDefault();
 

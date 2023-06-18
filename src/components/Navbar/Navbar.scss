@@ -1,5 +1,4 @@
 .nav {
-  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,6 +26,8 @@
     gap: 3rem;
     a {
       cursor: pointer;
+      text-decoration: none;
+      color: inherit;
     }
   }
 
