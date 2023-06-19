@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import "./Navbar.scss";
+import TransitionLink from "../Utility/TransitionLink";
 
 const Navbar: React.FC = () => {
   return (
@@ -11,16 +12,16 @@ const Navbar: React.FC = () => {
       </div>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <TransitionLink to="/">Home</TransitionLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <TransitionLink to="/about">About</TransitionLink>
         </li>
         <li>
-          <Link to="/projects">Projects</Link>
+          <TransitionLink to="/projects">Projects</TransitionLink>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <TransitionLink to="/contact">Contact</TransitionLink>
         </li>
       </ul>
       <MobileNav />

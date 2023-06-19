@@ -1,46 +1,40 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./About.scss";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+
+const parentVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const childVariants = {
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 1 } },
+};
 
 const About: React.FC = () => {
-  const { ref, inView } = useInView({ threshold: 0.2 });
-  const animation = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        x: "0",
-        y: "0",
-        boxShadow: "8px 10px 4px rgba(0, 0, 0, 0.25)",
-        transition: {
-          delay: 0.3,
-          type: "spring",
-          duration: 0.5,
-        },
-      });
-    }
-    if (!inView) {
-      animation.start({
-        x: "8px",
-        y: "10px",
-        boxShadow: "rgba(0, 0, 0, 0.25) 0px 0px 0px 0px",
-      });
-    }
-  }, [inView, animation]);
-
   return (
-    <div className="about">
+    <motion.div
+      className="about"
+      initial="initial"
+      animate="animate"
+      variants={childVariants}
+    >
       <div className="about_title">
         <h1>About</h1>
       </div>
-      <motion.div
-        ref={ref}
-        className="about__container"
-        id="about"
-        animate={animation}
-      >
-        <div className="about_desc">
+      <motion.div className="about__container" id="about">
+        <motion.div
+          className="about_desc"
+          variants={childVariants}
+          initial="initial"
+          animate="animate"
+        >
           <p>
             Hi, I’m Alex and I’m passionate about everything web-development!
             <br></br>
@@ -57,8 +51,13 @@ const About: React.FC = () => {
             enthusiasm for web development would make me a perfect fit for a
             junior web development position!
           </p>
-        </div>
-        <div className="about__skills__container">
+        </motion.div>
+        <motion.div
+          className="about__skills__container"
+          variants={childVariants}
+          initial="initial"
+          animate="animate"
+        >
           <div className="about__skills__title">
             <h3>Tech I use:</h3>
           </div>
@@ -114,9 +113,9 @@ const About: React.FC = () => {
               <h5>Wordpress</h5>
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

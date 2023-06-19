@@ -1,8 +1,13 @@
 import React, { useEffect } from "react";
 import heropeep from "../../img/peep-51.png";
 import "./HeroPeep.scss";
+import { Variants, motion } from "framer-motion";
 
-const HeroPeep: React.FC = () => {
+interface HeroPeepProps {
+  variants: Variants;
+}
+
+const HeroPeep: React.FC<HeroPeepProps> = ({ variants }) => {
   useEffect(() => {
     const eyes = document.querySelectorAll<HTMLElement>(".hero__peep__eye");
     const peepBg = document.querySelector<HTMLElement>(".hero__peep__bg")!;
@@ -23,9 +28,9 @@ const HeroPeep: React.FC = () => {
     });
   }, []);
   return (
-    <div className="hero__peep">
-      <div className="hero__peep__bg"></div>
-      <div className="hero__peep__container">
+    <motion.div className="hero__peep" variants={variants}>
+      <motion.div className="hero__peep__bg"></motion.div>
+      <motion.div className="hero__peep__container">
         <img src={heropeep} alt="" />
         <div className="hero__peep__eye--left">
           <div className="hero__peep__eye--left__pupil  hero__peep__eye"></div>
@@ -33,8 +38,8 @@ const HeroPeep: React.FC = () => {
         <div className="hero__peep__eye--right">
           <div className="hero__peep__eye--right__pupil hero__peep__eye"></div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

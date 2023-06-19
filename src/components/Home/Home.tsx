@@ -5,6 +5,21 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-scroll";
 
+const parentVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const childVariants = {
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 1 } },
+};
+
 const Home: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
   const animation = useAnimation();
@@ -32,8 +47,19 @@ const Home: React.FC = () => {
   }, [inView, animation]);
 
   return (
-    <div className="hero" id="hero">
-      <div className="hero__desc">
+    <motion.div
+      className="hero"
+      id="hero"
+      variants={parentVariants}
+      initial="initial"
+      animate="animate"
+    >
+      <motion.div
+        className="hero__desc"
+        variants={childVariants}
+        initial="initial"
+        animate="animate"
+      >
         <h1>Hi, I'm Alex.</h1>
         <h3>
           I’m a <strong>Frontend Web Developer</strong> based in Germany.
@@ -61,9 +87,9 @@ const Home: React.FC = () => {
             </a>
           </motion.button>
         </div>
-      </div>
-      <HeroPeep />
-    </div>
+      </motion.div>
+      <HeroPeep variants={childVariants} />
+    </motion.div>
   );
 };
 
