@@ -13,7 +13,6 @@ const TransitionDiv: React.FC<TransitionDivProps> = ({ state }) => {
     const divElement = divRef.current;
 
     if (state === "entering" && divElement) {
-      // Apply initial styles or animations when entering
       setIsAnimating(true);
       divElement.style.transform = "translateX(-100%)";
       divElement.style.transition = "transform 0.5s ease-in";
@@ -23,7 +22,6 @@ const TransitionDiv: React.FC<TransitionDivProps> = ({ state }) => {
         setIsAnimating(false);
       }, 500);
     } else if (state === "exiting" && divElement) {
-      // Apply styles or animations when exiting
       setIsAnimating(true);
       divElement.style.transform = "translateX(100%)";
       divElement.style.transition = "transform 0.5s ease-out";
