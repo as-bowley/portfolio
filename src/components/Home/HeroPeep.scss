@@ -17,6 +17,7 @@
     min-height: 455px;
     min-width: 325px;
     margin-right: 20px;
+
     .hero__peep__eye--left {
       background-color: rgb(255, 255, 255);
       position: absolute;
@@ -81,6 +82,29 @@
       background-position: center;
       margin-right: 0;
       min-height: 350px;
+      .hero__peep__eye--left,
+      .hero__peep__eye--right {
+        display: none;
+      }
+      img {
+        display: none;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .hero__peep {
+    .hero__peep__bg {
+      display: none;
+    }
+    .hero__peep__container {
+      margin-top: 5%;
+      background-image: url("../../img/peep-51-eyes.png");
+      background-repeat: no-repeat;
+      background-size: 180px auto;
+      background-position: center;
+      margin-right: 0;
+      min-height: 250px;
       .hero__peep__eye--left,
       .hero__peep__eye--right {
         display: none;

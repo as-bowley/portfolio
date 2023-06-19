@@ -11,6 +11,22 @@ import footbaseGif from "../../img/footbaseprojectgif.gif";
 import vaderGif from "../../img/vaderprojectgif.gif";
 import battleshipGif from "../../img/battleshipgif.gif";
 import cvBuilderGif from "../../img/cvbuilder.gif";
+import { motion } from "framer-motion";
+
+const parentVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const childVariants = {
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 1 } },
+};
 
 const Projects: React.FC = () => {
   const [isFootModalOpen, setIsFootModalOpen] = useState<boolean>(false);
@@ -21,11 +37,27 @@ const Projects: React.FC = () => {
   const { ref } = useInView({ threshold: 0.2 });
 
   return (
-    <div className="projects" id="projects">
-      <div className="projects_title">
+    <motion.div
+      className="projects"
+      id="projects"
+      variants={parentVariants}
+      initial="initial"
+      animate="animate"
+    >
+      <motion.div
+        className="projects_title"
+        variants={childVariants}
+        initial="initial"
+        animate="animate"
+      >
         <h1>Projects</h1>
-      </div>
-      <div className="projects_tiles">
+      </motion.div>
+      <motion.div
+        className="projects_tiles"
+        variants={childVariants}
+        initial="initial"
+        animate="animate"
+      >
         <div
           ref={ref}
           className="projects_tile"
@@ -130,8 +162,8 @@ const Projects: React.FC = () => {
           />
           <img src={cvlogo} alt="" />
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

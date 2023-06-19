@@ -6,21 +6,25 @@
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 41px;
-  width: 100%;
   margin-top: 20px;
-  .nav__title {
-    margin-left: 105px;
+  margin-left: 4rem;
+  margin-right: 4rem;
+
+  &__title {
     z-index: 2;
     height: fit-content;
-    h1 {
-      margin: 0;
-      font-weight: 400;
-      font-family: "Source Serif Pro", serif;
-      font-size: 2rem;
+    a {
+      text-decoration: none;
+      color: #000;
+      h1 {
+        margin: 0;
+        font-weight: 400;
+        font-family: "Source Serif Pro", serif;
+        font-size: 2rem;
+      }
     }
   }
   ul {
-    margin-right: 105px;
     display: flex;
     list-style: none;
     gap: 3rem;
@@ -34,10 +38,17 @@
   .mobile-nav {
     display: none;
   }
+  &__item {
+    &--active {
+      border-bottom: #000 solid;
+    }
+  }
 }
 
 @media (max-width: 1000px) {
   .nav {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
     .mobile-nav {
       .mobile-nav__nav {
         position: fixed;
@@ -66,29 +77,27 @@
               cursor: pointer;
             }
           }
-          .mobile-nav__menu-socials {
-            ul {
+          .mobile-nav__socials-list {
+            display: flex;
+            align-items: center;
+            padding-left: 0;
+            gap: 0.2rem;
+            li {
               display: flex;
               align-items: center;
-              padding-left: 0;
-              gap: 0.2rem;
-              li {
+              justify-content: center;
+              a {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                a {
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  i {
-                    font-size: 3rem;
-                    color: #fdffe0;
-                  }
-                }
-                svg {
+                i {
                   font-size: 3rem;
                   color: #fdffe0;
                 }
+              }
+              svg {
+                font-size: 3rem;
+                color: #fdffe0;
               }
             }
           }

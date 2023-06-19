@@ -2,16 +2,6 @@ import React from "react";
 import "./About.scss";
 import { motion } from "framer-motion";
 
-const parentVariants = {
-  initial: {},
-  animate: {
-    transition: {
-      delayChildren: 0.2,
-      staggerChildren: 0.4,
-    },
-  },
-};
-
 const childVariants = {
   initial: { y: 30, opacity: 0 },
   animate: { y: 0, opacity: 1, transition: { duration: 1 } },
@@ -25,9 +15,6 @@ const About: React.FC = () => {
       animate="animate"
       variants={childVariants}
     >
-      <div className="about_title">
-        <h1>About</h1>
-      </div>
       <motion.div className="about__container" id="about">
         <motion.div
           className="about_desc"

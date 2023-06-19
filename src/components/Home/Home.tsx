@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-import "./Hero.scss";
+import React from "react";
+import "./Home.scss";
 import HeroPeep from "./HeroPeep";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const parentVariants = {
   initial: {},
@@ -20,32 +19,25 @@ const childVariants = {
   animate: { y: 0, opacity: 1, transition: { duration: 1 } },
 };
 
+const buttonVariants = {
+  initial: {
+    x: "8px",
+    y: "10px",
+    boxShadow: "rgba(0, 0, 0, 0.25) 0px 0px 0px 0px",
+  },
+  animate: {
+    x: "0",
+    y: "0",
+    boxShadow: "8px 10px 4px rgba(0, 0, 0, 0.25)",
+    transition: {
+      delay: 0.3,
+      type: "spring",
+      duration: 0.5,
+    },
+  },
+};
+
 const Home: React.FC = () => {
-  const { ref, inView } = useInView({ threshold: 0.2 });
-  const animation = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        x: "0",
-        y: "0",
-        boxShadow: "8px 10px 4px rgba(0, 0, 0, 0.25)",
-        transition: {
-          delay: 0.3,
-          type: "spring",
-          duration: 0.5,
-        },
-      });
-    }
-    if (!inView) {
-      animation.start({
-        x: "8px",
-        y: "10px",
-        boxShadow: "rgba(0, 0, 0, 0.25) 0px 0px 0px 0px",
-      });
-    }
-  }, [inView, animation]);
-
   return (
     <motion.div
       className="hero"
@@ -64,19 +56,19 @@ const Home: React.FC = () => {
         <h3>
           I’m a <strong>Frontend Web Developer</strong> based in Germany.
         </h3>
-        <div className="hero_buttons">
-          <motion.button ref={ref} animate={animation}>
-            <Link
-              to="projects"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-            >
-              Projects
-            </Link>
+        <div className="hero__desc__buttons">
+          <motion.button
+            variants={buttonVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <Link to="/projects">Projects</Link>
           </motion.button>
-          <motion.button ref={ref} animate={animation}>
+          <motion.button
+            variants={buttonVariants}
+            initial="initial"
+            animate="animate"
+          >
             <a
               href={require("../../documents/a-bowley-resume.pdf")}
               target="_blank"

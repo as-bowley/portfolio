@@ -1,6 +1,22 @@
 import "./Contact.scss";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+
+const parentVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const childVariants = {
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 1 } },
+};
 
 const Contact: React.FC = () => {
   const [formSent, setFormSent] = useState<boolean>(false);
@@ -34,12 +50,32 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="contact">
-      <div className="contact__title">
+    <motion.div
+      className="contact"
+      initial="initial"
+      animate="animate"
+      variants={parentVariants}
+    >
+      <motion.div
+        className="contact__title"
+        initial="initial"
+        animate="animate"
+      >
         <h1>Contact</h1>
-      </div>
-      <div className="contact__container" id="about">
-        <div className="contact_form">
+      </motion.div>
+      <motion.div
+        className="contact__container"
+        id="about"
+        initial="initial"
+        animate="animate"
+        variants={childVariants}
+      >
+        <motion.div
+          className="contact_form"
+          initial="initial"
+          animate="animate"
+          variants={childVariants}
+        >
           <fieldset disabled={formSent ? true : false}>
             <form ref={form} onSubmit={sendEmail}>
               <label htmlFor="name">Name</label>
@@ -59,16 +95,21 @@ const Contact: React.FC = () => {
               ) : null}
             </form>
           </fieldset>
-        </div>
-        <div className="contact_alternative">
+        </motion.div>
+        <motion.div
+          className="contact_alternative"
+          initial="initial"
+          animate="animate"
+          variants={childVariants}
+        >
           <p>
             You can also contact me through the following email address:
             <br></br>
             <strong>alexstubowley@gmail.com</strong>
           </p>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

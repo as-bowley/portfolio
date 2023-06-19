@@ -1,17 +1,47 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faBars, faXmark, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-const MobileNav: React.FC = () => {
+type MobileNavProps = {
+  className?: string;
+};
+
+const MobileNav: React.FC<MobileNavProps> = () => {
   const [show, setShow] = useState<boolean>(false);
 
   const variants = {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: "-100%" },
   };
+
+  const navLinks = [
+    { title: "Home", path: "/" },
+    { title: "About", path: "/about" },
+    { title: "Projects", path: "/projects" },
+    { title: "Contact", path: "/contact" },
+  ];
+
+  const socialLinks = [
+    {
+      href: "https://github.com/as-bowley",
+      target: "_blank",
+      rel: "noreferrer",
+      className: "devicon-github-original ",
+    },
+    {
+      href: "https://www.linkedin.com/in/alex-bowley",
+      target: "_blank",
+      rel: "noreferrer",
+      className: "devicon-linkedin-plain ",
+      style: { color: "#fdffe0" },
+    },
+    {
+      icon: <FontAwesomeIcon icon={faEnvelope} />,
+    },
+  ];
+
   return (
     <div className="mobile-nav">
       <motion.nav
@@ -21,84 +51,37 @@ const MobileNav: React.FC = () => {
         className="mobile-nav__nav"
       >
         <motion.div className="mobile-nav__menu">
-          <ul>
-            <li>
-              <Link
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-                onClick={() => setShow(!show)}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-180}
-                duration={500}
-                onClick={() => setShow(!show)}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={40}
-                duration={500}
-                onClick={() => setShow(!show)}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-220}
-                duration={500}
-                onClick={() => setShow(!show)}
-              >
-                Contact
-              </Link>
-            </li>
+          <ul className="mobile-nav__items">
+            {navLinks.map((link, index) => (
+              <li key={index} className="mobile-nav__item">
+                <Link
+                  to={link.path}
+                  onClick={() => setShow(!show)}
+                  className="mobile-nav__link"
+                >
+                  {link.title}
+                </Link>
+              </li>
+            ))}
           </ul>
-          <div className="mobile-nav__menu-socials">
-            <ul>
-              <li>
-                <a
-                  href="https://github.com/as-bowley"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ textDecoration: "none" }}
-                >
-                  <i className="devicon-github-original colored"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/alex-bowley"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ textDecoration: "none" }}
-                >
-                  <i
-                    className="devicon-linkedin-plain"
-                    style={{ color: "#fdffe0" }}
-                  ></i>
-                </a>
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faEnvelope} />
-              </li>
+          <div className="mobile-nav__socials">
+            <ul className="mobile-nav__socials-list">
+              {socialLinks.map((link, i) => (
+                <li key={i} className="mobile-nav__socials-item">
+                  {link.icon ? (
+                    link.icon
+                  ) : (
+                    <a
+                      href={link.href}
+                      target={link.target}
+                      rel={link.rel}
+                      style={link.style}
+                    >
+                      <i className={link.className}></i>
+                    </a>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
         </motion.div>
